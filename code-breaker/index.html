@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Code Breaker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1>Break the code to open the lock!</h1>
+    <p>If one of the numbers is <span style="color: goldenrod">golden</span>, the number is correct BUT at the wrong
+        position.</p>
+    <main id="main">
+        <article class="flex-container">
+            <input type="number" class="flex-item" id="numberOne" min="1" max="9">
+            <input type="number" class="flex-item" id="numberTwo" min="1" max="9">
+            <input type="number" class="flex-item" id="numberThree" min="1" max="9">
+        </article>
+        <button onclick="checkIfCorrect()" id="check">Try the combination</button>
+        <p id="counter"></p>
+        <button onclick="reset()" id="reset">Reset/Restart</button>
+    </main>
+</body>
+<script src="javascript/script.js"></script>
+
+</html>

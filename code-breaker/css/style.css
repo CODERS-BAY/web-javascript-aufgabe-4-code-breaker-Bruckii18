@@ -1,0 +1,49 @@
+body {
+    background-image: url(../img/wood_bg.png);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: white;
+}
+
+main {
+    background-image: url(../img/lock_closed.png);
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+    margin: auto;
+    height: 40rem;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 4rem;
+}
+
+.flex-item {
+    height: 20rem;
+    width: 13rem;
+    opacity: 0.5;
+    margin: 1rem;
+    font-size: 5rem;
+    text-align: center;
+}
+
+button {
+    display: table;
+    margin: auto;
+    padding: 2rem;
+}
+
+#reset {
+    padding: 1rem;
+}
