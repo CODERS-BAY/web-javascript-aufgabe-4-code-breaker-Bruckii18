@@ -9,7 +9,7 @@ var numberTwoDone = false;
 var numberThreeDone = false;
 var deathCounter = 12;
 reset();
-
+//resets the game, creates new number, unlocks inputs
 function reset() {
     hiddenNumberOne = Math.round(Math.random() * 8 + 1);
     hiddenNumberTwo = Math.round(Math.random() * 8 + 1);
@@ -28,7 +28,7 @@ function reset() {
     numberTwoDone = false;
     numberThreeDone = false;
 }
-
+//checks if any number is correct and locks the input
 function checkIfCorrect() {
     numberOne = document.getElementById("numberOne").value;
     numberTwo = document.getElementById("numberTwo").value;
@@ -55,21 +55,27 @@ function checkIfCorrect() {
     } else {
         document.getElementById("numberThree").style.backgroundColor = "red";
     }
+
     checkIfNumbercontain();
+    //Winning condition
     if (numberOneDone && numberTwoDone && numberThreeDone) {
         document.getElementById("main").style.backgroundImage = "url('../img/lock_open.png')"
+        setTimeout(function () {
         alert("You cracked the code! Congratulations! The Game will automatically restart!");
         location.reload();
+        }, 500);
+        //Wrong try    
     } else {
         deathCounter--;
         document.getElementById("counter").innerHTML = "Remaining tries: " + deathCounter;
     }
+    //When ur tries are 9 -> lose
     if (deathCounter == 0) {
         alert("You lost the game! The Code would've been: " + hiddenNumberOne + hiddenNumberTwo + hiddenNumberThree + ". The Game will automatically restart!");
         location.reload();
     }
 }
-
+//checks if the number is at one of the two other locations
 function checkIfNumbercontain() {
     if (numberOne == hiddenNumberTwo || numberOne == hiddenNumberThree) {
         document.getElementById("numberOne").style.color = "goldenrod";
@@ -81,7 +87,7 @@ function checkIfNumbercontain() {
         document.getElementById("numberThree").style.color = "goldenrod";
     }
 }
-
+//resets to black, so it doesnt stay on orange
 function resetColor() {
     document.getElementById("numberOne").style.color = "black";
     document.getElementById("numberTwo").style.color = "black";
